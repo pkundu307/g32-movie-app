@@ -16,6 +16,10 @@ const Navbar = () => {
 <NavLink to={"/profile"}>Profile</NavLink>
 <NavLink to={"/favorites"}>Favorites</NavLink>
 
+<button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+  {theme === "dark" ? "☀️" : "🌜"}
+</button>
+
 </nav>
       
     </div>
