@@ -14,6 +14,7 @@ const Navbar = () => {
 </div>
 <NavLink to={"/"}>Home</NavLink>
 <NavLink to={"/profile"}>Profile</NavLink>
+<NavLink to={"/favorites"}>Favorites</NavLink>
 
 </nav>
       
