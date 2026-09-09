@@ -1,8 +1,8 @@
 import {NavLink} from 'react-router-dom'
-import { useTheme } from '../hooks/useTheme'
+// import { useTheme } from '../hooks/useTheme'
 
 const Navbar = () => {
-  const [theme, setTheme] = useTheme();
+  // const [theme, setTheme] = useTheme();
 
   return (
     <div>
@@ -17,7 +17,7 @@ const Navbar = () => {
 <NavLink to={"/favorites"}>Favorites</NavLink>
 
 <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-  {theme === "dark" ? "☀️" : "🌜"}
+  {/* {theme === "dark" ? "☀️" : "🌜"} */}
 </button>
 
 </nav>
