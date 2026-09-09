@@ -3,4 +3,6 @@ import axios from "axios";
 const API_KEY = "6656d67c";
 const baseUrl=`https://www.omdbapi.com/?t=The%20Godfather&apikey=${API_KEY}`;
 
+export function searchMovies(title){
 axios.get(baseUrl).then((res) => console.log(res.data.Poster));
+}
