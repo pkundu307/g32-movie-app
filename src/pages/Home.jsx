@@ -8,8 +8,8 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 import { searchMovies } from "../api/omdbApi";
 
 export default function Home() {
-  const [query, setQuery] = useState("batman");
-  const [page, setPage] = useState(1);
+  const [query, setQuery] = useState("III");
+  const [page, setPage] = useState(2);
   const [sortBy, setSortBy] = useState("relevance");
   const [favorites, setFavorites] = useLocalStorage("favorites", []);
 

@@ -44,7 +44,7 @@ export default function MovieDetails() {
         <div className="sm:col-span-2">
           <h1 className="text-2xl font-semibold">{movie.Title}</h1>
           <p className="text-neutral-500 mt-1">
-            {movie.Year} • {movie.Runtime} • {movie.Genre}
+            {movie.Year} • {movie.Runtime} • {movie.Genre} • {movie.Language}
           </p>
 
           <button

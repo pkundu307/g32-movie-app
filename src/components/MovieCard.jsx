@@ -11,8 +11,8 @@ export default function MovieCard({ movie, isFavorite, onToggleFavorite }) {
       <Link to={`/movie/${movie.imdbID}`}>
         <img src={poster} alt={movie.Title} className="w-full h-64 object-cover" />
         <div className="p-3">
-          <h3 className="font-medium text-sm line-clamp-2">{movie.Title}</h3>
-          <p className="text-xs text-neutral-500 mt-1">{movie.Year}</p>
+          <h3 className="font-medium text-sm line-clamp-2 text-amber-50">{movie.Title}</h3>
+          <p className="text-xl text-neutral-500 mt-1 font-semibold">{movie.Year}</p>
         </div>
       </Link>
       {onToggleFavorite && (
@@ -23,7 +23,7 @@ export default function MovieCard({ movie, isFavorite, onToggleFavorite }) {
           }`}
           aria-label="Toggle favorite"
         >
-          {isFavorite ? "♥" : "♡"}
+          {isFavorite ? "💖" : "♡"}
         </button>
       )}
     </div>
