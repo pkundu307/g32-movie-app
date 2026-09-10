@@ -1,34 +1,31 @@
 import { Link } from "react-router-dom";
 
-const fallback_poster =
-  "https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png";
+const FALLBACK_POSTER =
+  "https://placehold.co/300x445?text=No+Poster";
 
-  export default function MovieCard({ movie,isFavorite, onToggleFavorite }) {
-    const poster = movie.Poster && movie.Poster !== "N/A" ? movie.Poster : fallback_poster;
-    // ternary operator to check if the movie poster is available, if not use the fallback poster
+export default function MovieCard({ movie, isFavorite, onToggleFavorite }) {
+  const poster = movie.Poster && movie.Poster !== "N/A" ? movie.Poster : FALLBACK_POSTER;
 
-    return(
-      <>
-      <div className="group relative round-lg overflow-hidden border border-gray-200/50 dark:border-gray-700/50 transition hover:scale-[1.01] hover:shadow-lg">
+  return (
+    <div className="group relative rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:shadow-lg transition-shadow">
       <Link to={`/movie/${movie.imdbID}`}>
-        <img
-          src={poster}
-          alt={movie.Title}
-          className="h-180px w-full object-cover transition group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-black/50 opacity-0 transition group-hover:opacity-100 flex items-center justify-center">
-          <p className="text-white text-lg font-semibold">{movie.Title}</p>
+        <img src={poster} alt={movie.Title} className="w-full h-64 object-cover" />
+        <div className="p-3">
+          <h3 className="font-medium text-sm line-clamp-2">{movie.Title}</h3>
+          <p className="text-xs text-neutral-500 mt-1">{movie.Year}</p>
         </div>
       </Link>
       {onToggleFavorite && (
         <button
           onClick={() => onToggleFavorite(movie)}
-          className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded"
+          className={`absolute top-2 right-2 h-8 w-8 rounded-full flex items-center justify-center text-sm shadow ${
+            isFavorite ? "bg-accent text-white" : "bg-white/90 text-neutral-700"
+          }`}
+          aria-label="Toggle favorite"
         >
-          {isFavorite ? "💖" : "🤍"}
+          {isFavorite ? "♥" : "♡"}
         </button>
       )}
-      </div>
-      </>
-    )
-  }
+    </div>
+  );
+}
